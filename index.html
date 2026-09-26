@@ -363,7 +363,7 @@ nav {
     gap: 5px;
 }
 
-/* Gallery Section */
+/* Gallery Section - Square Grid */
 .gallery {
     padding: 100px 5%;
     background: var(--darker);
@@ -371,36 +371,43 @@ nav {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Десктоп: 3 колонки */
+    gap: 15px;
     margin-top: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gallery-item {
     position: relative;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     cursor: pointer;
-    border: 2px solid rgba(255, 107, 0, 0.2);
-    transition: all 0.3s;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-    box-shadow: 0 15px 40px rgba(255, 107, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    background: var(--card-bg);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: transform 0.4s ease, filter 0.3s ease;
+    filter: brightness(0.92);
+}
+
+.gallery-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 107, 0, 0.25);
+    z-index: 2;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
+    filter: brightness(1);
 }
 
 .gallery-overlay {
@@ -409,12 +416,12 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 107, 0, 0.8);
+    background: rgba(255, 107, 0, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -422,9 +429,42 @@ nav {
 }
 
 .gallery-overlay i {
-    font-size: 48px;
+    font-size: 32px;
     color: var(--light);
+    transition: transform 0.3s;
 }
+
+.gallery-item:hover .gallery-overlay i {
+    transform: scale(1.2);
+}
+
+/* Планшет: 2 колонки (от 601px до 1024px) */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+/* Телефон: 1 колонка (600px и меньше) */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        max-width: 400px;
+    }
+
+    .gallery-item {
+        border-radius: 8px;
+    }
+
+    .gallery-overlay i {
+        font-size: 28px;
+    }
+}
+
+
+
 
 /* Lightbox */
 .lightbox {
@@ -1331,62 +1371,85 @@ footer p {
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="section-title">ФОТО <span>ГАЛЕРЕЯ</span></div>
-        <p class="section-subtitle">Моменты с концертов и закулисье</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0)">
-                <img src="images/11.jpg" alt="Фото с выступления 1">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(1)">
-                <img src="images/12.jpg" alt="Фото с выступления 2">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(2)">
-                <img src="images/13.jpg" alt="Фото с выступления 3">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(3)">
-                <img src="images/14.jpg" alt="Фото с выступления 4">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="images/15.jpg" alt="Фото с выступления 5">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(5)">
-                <img src="images/16.jpg" alt="Фото с выступления 6">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
+<section class="gallery" id="gallery">
+    <h2 class="section-title">ФОТО <span>ГАЛЕРЕЯ</span></h2>
+    <p class="section-subtitle">Моменты с концертов и закулисье</p>
+    
+    <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox(0)">
+            <img src="images/11.jpg?quality=95" alt="Фото 1">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
             </div>
         </div>
-    </section>
+
+        <div class="gallery-item" onclick="openLightbox(1)">
+            <img src="images/12.jpg?quality=95" alt="Фото 2">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(2)">
+            <img src="images/13.jpg?quality=95" alt="Фото 3">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(3)">
+            <img src="images/14.jpg?quality=95" alt="Фото 4">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(4)">
+            <img src="images/15.jpg?quality=95" alt="Фото 5">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(5)">
+            <img src="images/16.jpg?quality=95" alt="Фото 6">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(6)">
+            <img src="images/17.jpg?quality=95" alt="Фото 7">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(7)">
+            <img src="images/18.jpg?quality=95" alt="Фото 8">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox(8)">
+            <img src="images/19.jpg?quality=95" alt="Фото 9">
+            <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
-        <img src="" alt="Увеличенное фото" id="lightbox-img">
-    </div>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
+    <img src="" alt="Увеличенное фото" id="lightbox-img">
+    <div class="lightbox-dots" id="lightbox-dots"></div>
+</div>
+
 
     <!-- Quotes Section 
     <section class="quotes" id="quotes">
