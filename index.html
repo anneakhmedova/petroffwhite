@@ -989,11 +989,11 @@ footer p {
         <div class="logo">PETROFF_WHITE</div>
         <ul class="nav-links">
             <li><a href="#home">Главная</a></li>
+            <li><a href="#tour">Концерты</a></li>
             <li><a href="#videos">Видео</a></li>
+            <!-- <li><a href="#quotes">Шутки</a></li> -->
+            <li><a href="#about">Обо мне</a></li> 
             <li><a href="#gallery">Галерея</a></li>
-            <li><a href="#quotes">Шутки</a></li>
-            <li><a href="#about">Обо мне</a></li>
-            <li><a href="#tour">Туры</a></li>
             <li><a href="#contact">Контакты</a></li>
         </ul>
         <div class="mobile-menu">
@@ -1007,7 +1007,6 @@ footer p {
             <div class="hero-text">
                 <h1>Даниил <span>Петров</span></h1>
                 <p class="subtitle">Стендап-комик</p>
-                <p class="tagline">Из Борисоглебска с любовью и шутками про нефтегазовую отрасль</p>
                 
                 <div class="cta-buttons">
                     <a href="#videos" class="btn btn-primary">
@@ -1026,12 +1025,12 @@ footer p {
                         <div class="stat-label">Лайков в TikTok</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">40K+</div>
+                        <div class="stat-number">75K+</div>
                         <div class="stat-label">Подписчиков</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Концертов</div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Выступлений</div>
                     </div>
                 </div>
             </div>
@@ -1040,6 +1039,112 @@ footer p {
                 <img src="images/1.jpeg" alt="Даниил Петров на сцене">
             </div>
         </div>
+    </section>
+
+    <!-- Tour Section -->
+    <section class="tour" id="tour">
+        <h2 class="section-title">Ближайшие <span>концерты</span></h2>
+        
+        <p class="section-subtitle">Следи за анонсами, чтобы не пропустить</p>
+    
+    <div class="tour-list">
+        <!-- Компактное сообщение об отсутствии концертов -->
+        <div class="tour-item" style="flex-direction: column; text-align: center; padding: 40px 20px; gap: 16px;">
+            
+            <!-- Уменьшенный микрофон -->
+            <div style="font-size: 48px; margin-bottom: 5px;">🎤</div>
+            
+            <!-- Чуть меньший заголовок -->
+            <h3 style="font-size: 24px; margin-bottom: 8px; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Скоро новые даты!
+            </h3>
+            
+            <!-- Более компактный текст -->
+            <p style="color: var(--gray); font-size: 15px; max-width: 450px; margin: 0 auto 16px; line-height: 1.5;">
+                Сейчас я работаю над новой программой. Подпишись на соцсети, чтобы первым узнать о концертах и получить эксклюзивные предложения.
+            </p>
+            
+            <!-- Кнопки соцсетей (чуть компактнее) -->
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px;">
+                <a href="https://t.me/petroff_white_channel" target="_blank" class="btn btn-primary" style="padding: 10px 24px; font-size: 13px;">
+                    <i class="fab fa-telegram-plane"></i> Telegram
+                </a>
+                <a href="https://instagram.com/petroff_standup" target="_blank" class="btn btn-secondary" style="padding: 10px 24px; font-size: 13px;">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://vk.com/petroff.standup" target="_blank" class="btn btn-secondary" style="padding: 10px 24px; font-size: 13px;">
+                    <i class="fab fa-vk"></i> ВКонтакте
+                </a>
+            </div>
+        </div> 
+    </div>
+
+        
+        <!--<p class="section-subtitle">Приходи на живое выступление</p>
+        
+        <div class="tour-list">
+            <div class="tour-item sold-out">
+                <div class="sold-out-badge">SOLD OUT</div>
+                <div class="tour-date">
+                    <div class="day">15</div>
+                    <div class="month">окт</div>
+                </div>
+                <div class="tour-info">
+                    <h3>Сольный концерт в Москве</h3>
+                    <div class="tour-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Stand-Up Club #1, Москва
+                    </div>
+                </div>
+                <span class="btn btn-secondary" style="opacity: 0.5; cursor: not-allowed;">Распродано</span>
+            </div>
+
+            <div class="tour-item">
+                <div class="tour-date">
+                    <div class="day">22</div>
+                    <div class="month">окт</div>
+                </div>
+                <div class="tour-info">
+                    <h3>Концерт с Максом Поваго</h3>
+                    <div class="tour-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Санкт-Петербург
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Купить билет</a>
+            </div>
+
+            <div class="tour-item sold-out">
+                <div class="sold-out-badge">SOLD OUT</div>
+                <div class="tour-date">
+                    <div class="day">05</div>
+                    <div class="month">ноя</div>
+                </div>
+                <div class="tour-info">
+                    <h3>Домашний концерт</h3>
+                    <div class="tour-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Борисоглебск
+                    </div>
+                </div>
+                <span class="btn btn-secondary" style="opacity: 0.5; cursor: not-allowed;">Распродано</span>
+            </div>
+
+            <div class="tour-item">
+                <div class="tour-date">
+                    <div class="day">12</div>
+                    <div class="month">ноя</div>
+                </div>
+                <div class="tour-info">
+                    <h3>Открытый микрофон ТНТ</h3>
+                    <div class="tour-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Москва, съёмки шоу
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary">Регистрация</a>
+            </div>
+        </div>-->
     </section>
 
     <!-- Video Section -->
@@ -1164,6 +1269,67 @@ footer p {
         </div>
     </section>
 
+    <!-- Quotes Section -->
+    <!--<section class="quotes" id="quotes">
+        <div class="quotes-container">
+            <h2 class="section-title">МОИ <span>ШУТКИ</span></h2>
+            <p class="section-subtitle">Цитаты из монологов, которые заставят тебя смеяться</p>
+            
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <p class="quote-text">Я недавно свои стипендии откладывал, накопил. Я на такси поехал. Я аж на видео снял, матери отправил. Говорю, мам, смотри, в Москве поднялся. На экономии еду...</p>
+                    <p class="quote-source">— из монолога «Все включено»</p>
+                </div>
+
+                <div class="quote-card">
+                    <p class="quote-text">Я недавно к маме подошёл, говорю, мам, у меня у одногруппницы очки 60 тысяч стоят. У меня две. Из них полторы тысячи — это оправа. Нет ощущения, что я в какой-то момент ослепну от этих очков. Она мне говорит, Даня, ты дурак? Я с другой стороны стою, развернись...</p>
+                    <p class="quote-source">— из монолога «Маменькин сынок»</p>
+                </div>
+
+                <div class="quote-card">
+                    <p class="quote-text">Билеты эти по вождению учил я. Для меня эти билет как анекдот какой-то звучали. Я вот гужевую повозку ни разу на дороге не видел, чтобы там в каждом третьем билете гужевая повозка. Они там нарисовали, у них там трамвай, повозка, трактор, велосипедист, все едут. Я их как-то обогнать ещё должен...</p>
+                    <p class="quote-source">— из монолога «Я умею водить камаз»</p>
+                </div>
+
+                <div class="quote-card">
+                    <p class="quote-text">Бывшая мне один раз написала и говорит: «Даня, друг ко мне придёт с ночёвкой, но чтобы ты не ревновал, мы с ним будем спать вольтом». Я говорю, это поза 69 называется. Вольтом бы был бы, если б в СССР сейчас были бы.</p>
+                    <p class="quote-source">— из монолога «Он просто друг»</p>
+                </div>
+
+                <div class="quote-card">
+                    <p class="quote-text">Мне недавно одна девушка сказала, что дружба и френдзона — это вообще разные вещи. Она говорит: «Дань, смотри, дружба может быть и c сексом, а френдзона — это когда вообще без секса». Я говорю: «Так давай дружить, моя хорошая. Ну, в чём проблема?»</p>
+                    <p class="quote-source">— из монолога «Некуколд»</p>
+                </div>
+
+                <div class="quote-card">
+                    <p class="quote-text">Меня мама в детстве отдала на огромное количество вот этих кружков и дополнительных занятий. Серьезно. Я, значит, ходил на английский, испанский, гитару, саксофон, футбол, лёгкую атлетику, карате. И это у меня чисто вторник был, чтоб вы понимали</p>
+                    <p class="quote-source">— из монолога «Одаренный ребенок»</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">Обо <span>мне</span></h2>
+        <p class="section-subtitle">От КВН до больших сцен</p>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <img src="images/2.jpg" alt="Даниил Петров на сцене">
+            </div>
+            
+            <div class="about-text">
+                <p>Привет! Я Даниил Петров — стендап-комик из Борисоглебска. Начинал с КВН, а теперь выступаю на больших сценах и делаю людей счастливыми через смех.</p>
+                
+                <p>Мой юмор — это жизненные наблюдения, истории из провинции и шутки про то, как отец думает, что я авторитет в нефтегазовой отрасли (хотя на самом деле я просто хорошо шучу).</p>
+                
+                <p>Участвую в «Открытом микрофоне» на ТНТ, дважды финалист «Камеди Баттл» и резидент Stand-Up Club #1.</p>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="section-title">ФОТО <span>ГАЛЕРЕЯ</span></div>
@@ -1262,119 +1428,6 @@ footer p {
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <h2 class="section-title">Обо <span>мне</span></h2>
-        <p class="section-subtitle">От КВН до больших сцен</p>
-        
-        <div class="about-content">
-            <div class="about-image">
-                <img src="images/2.jpg" alt="Даниил Петров">
-            </div>
-            
-            <div class="about-text">
-                <p>Привет! Я Даниил Петров — стендап-комик из Борисоглебска. Начинал с КВН, а теперь выступаю на больших сценах и делаю людей счастливыми через смех.</p>
-                
-                <p>Мой юмор — это жизненные наблюдения, истории из провинции и шутки про то, как отец думает, что я авторитет в нефтегазовой отрасли (хотя на самом деле я просто хорошо шучу).</p>
-                
-                <p>Участвую в «Открытом микрофоне» на ТНТ, дважды финалист «Камеди Баттл» и резидент Stand-Up Club #1.</p>
-
-                <div class="achievements">
-                    <div class="achievement-card">
-                        <i class="fas fa-trophy"></i>
-                        <h3>Открытый микрофон ТНТ</h3>
-                        <p>Участник популярного шоу</p>
-                    </div>
-                    <div class="achievement-card">
-                        <i class="fas fa-medal"></i>
-                        <h3>Камеди Баттл</h3>
-                        <p>Дважды финалист</p>
-                    </div>
-                    <div class="achievement-card">
-                        <i class="fas fa-microphone"></i>
-                        <h3>Stand-Up Club #1</h3>
-                        <p>Участник Шоу историй</p>
-                    </div>
-                    <div class="achievement-card">
-                        <i class="fas fa-video"></i>
-                        <h3>Comedy Central</h3>
-                        <p>Публикации на платформе</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tour Section -->
-    <section class="tour" id="tour">
-        <h2 class="section-title">Ближайшие <span>концерты</span></h2>
-        <p class="section-subtitle">Приходи на живое выступление</p>
-        
-        <div class="tour-list">
-            <div class="tour-item sold-out">
-                <div class="sold-out-badge">SOLD OUT</div>
-                <div class="tour-date">
-                    <div class="day">15</div>
-                    <div class="month">окт</div>
-                </div>
-                <div class="tour-info">
-                    <h3>Сольный концерт в Москве</h3>
-                    <div class="tour-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Stand-Up Club #1, Москва
-                    </div>
-                </div>
-                <span class="btn btn-secondary" style="opacity: 0.5; cursor: not-allowed;">Распродано</span>
-            </div>
-
-            <div class="tour-item">
-                <div class="tour-date">
-                    <div class="day">22</div>
-                    <div class="month">окт</div>
-                </div>
-                <div class="tour-info">
-                    <h3>Концерт с Максом Поваго</h3>
-                    <div class="tour-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Санкт-Петербург
-                    </div>
-                </div>
-                <a href="#" class="btn btn-primary">Купить билет</a>
-            </div>
-
-            <div class="tour-item sold-out">
-                <div class="sold-out-badge">SOLD OUT</div>
-                <div class="tour-date">
-                    <div class="day">05</div>
-                    <div class="month">ноя</div>
-                </div>
-                <div class="tour-info">
-                    <h3>Домашний концерт</h3>
-                    <div class="tour-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Борисоглебск
-                    </div>
-                </div>
-                <span class="btn btn-secondary" style="opacity: 0.5; cursor: not-allowed;">Распродано</span>
-            </div>
-
-            <div class="tour-item">
-                <div class="tour-date">
-                    <div class="day">12</div>
-                    <div class="month">ноя</div>
-                </div>
-                <div class="tour-info">
-                    <h3>Открытый микрофон ТНТ</h3>
-                    <div class="tour-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Москва, съёмки шоу
-                    </div>
-                </div>
-                <a href="#" class="btn btn-secondary">Регистрация</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Social Section -->
     <section class="section">
         <h2 class="section-title">Подпишись на <span>меня</span></h2>
@@ -1385,6 +1438,12 @@ footer p {
                 <i class="fab fa-tiktok"></i>
                 <h3>TikTok</h3>
                 <p>@petroff_white<br>42K подписчиков, 2.2M лайков</p>
+            </a>
+            
+            <a href="https://instagram.com/petroff_standup" target="_blank" class="social-card instagram">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram</h3>
+                <p>@petroff_standup<br>6.7K подписчиков</p>
             </a>
 
             <a href="https://instagram.com/petroff_white" target="_blank" class="social-card instagram">
@@ -1399,7 +1458,7 @@ footer p {
                 <p>@petroff_white_channel<br>Полные версии монологов</p>
             </a>
 
-            <a href="#" class="social-card youtube">
+            <a href="https://www.youtube.com/@petroff_white" class="social-card youtube">
                 <i class="fab fa-youtube"></i>
                 <h3>YouTube</h3>
                 <p>Даниил Петров<br>Стендап выступления</p>
@@ -1432,9 +1491,10 @@ footer p {
     <p>&copy; 2026 Даниил Петров. Все права защищены.</p>
     <p style="margin-top: 10px; font-size: 14px;">Сделано с <i class="fas fa-heart" style="color: var(--primary);"></i> и юмором</p>
     <p style="margin-top: 15px; font-size: 13px; color: var(--gray); border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 15px;">
-        by: <span style="color: var(--primary); font-weight: 600;">Anny Rey</span>
+        by: <a href="https://t.me/anny_rey_off" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: none;">Anny Rey</a>
     </p>
 </footer>
+
 
 
     <script>
@@ -1537,7 +1597,7 @@ footer p {
             }
         });
 
-        // ✅ Закрытие меню при клике на любую ссылку внутри него
+        // Закрытие меню при клике на любую ссылку внутри него
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 968) {
@@ -1547,7 +1607,7 @@ footer p {
             });
         });
 
-        // ✅ Закрытие меню при клике в пустое место (вне меню)
+        // Закрытие меню при клике в пустое место (вне меню)
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 968 && 
                 !navLinks.contains(e.target) && 
@@ -1558,7 +1618,7 @@ footer p {
             }
         });
 
-        // ✅ Закрытие меню по клавише Escape
+        // Закрытие меню по клавише Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && window.innerWidth <= 968 && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -1566,7 +1626,7 @@ footer p {
             }
         });
 
-        // ✅ Автоматическое закрытие при повороте экрана или растягивании окна
+        // Автоматическое закрытие при повороте экрана или растягивании окна
         window.addEventListener('resize', () => {
             if (window.innerWidth > 968) {
                 navLinks.classList.remove('active');
