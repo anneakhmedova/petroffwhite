@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Даниил Петров | Стендап-комик</title>
-    <meta name="description" content="Официальный сайт стендап-комика Даниила Петрова. Участник Открытого микрофона ТНТ, финалист Камеди Баттл">
+    <!-- Open Graph для красивого превью в соцсетях и мессенджерах -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Даниил Петров | Стендап-комик">
+<meta property="og:description" content="Человек, который учится добывать нефть, но пока лучше всего у него получается добывать смех. Резидент StandUp Culture.">
+<meta property="og:url" content="https://petroffwhite.com">
+<meta property="og:image" content="https://petroffwhite.com/images/2.jpg">
+<meta property="og:site_name" content="Даниил Петров">
+<meta property="og:locale" content="ru_RU">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1020,6 +1027,296 @@ footer p {
 }
 
 
+/* Модальное окно для видео */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.video-modal-content {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.video-modal-close:hover {
+    color: var(--primary);
+}
+
+.video-modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--light);
+}
+
+.video-modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+
+.modal-btn i {
+    font-size: 24px;
+}
+
+.modal-btn.youtube {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.modal-btn.youtube:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+}
+
+.modal-btn.vk {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-btn.vk:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .video-modal-content {
+        padding: 30px 20px;
+    }
+    
+    .video-modal-buttons {
+        flex-direction: column;
+    }
+    
+    .modal-btn {
+        width: 100%;
+    }
+}
+
+.platform-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.platform-modal-content {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.platform-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.platform-modal-close:hover {
+    color: var(--primary);
+}
+
+.platform-modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--light);
+}
+
+.platform-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.platform-btn {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.platform-btn i {
+    font-size: 24px;
+}
+
+.yt-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.yt-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+}
+
+.vk-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.vk-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .platform-modal-content {
+        padding: 30px 20px;
+    }
+    .platform-buttons {
+        flex-direction: column;
+    }
+    .platform-btn {
+        width: 100%;
+    }
+}
+
+
+/* Простой футер */
+footer {
+    background: var(--darker);
+    padding: 40px 5% 30px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.footer-menu a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: var(--primary);
+}
+
+footer p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.footer-credit {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+    .footer-menu {
+        gap: 15px;
+    }
+    .footer-menu a {
+        font-size: 13px;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -1188,126 +1485,128 @@ footer p {
     </section>
 
     <!-- Video Section -->
-    <section class="videos" id="videos">
-        <div class="section-title">ВИДЕО <span>ВЫСТУПЛЕНИЯ</span></div>
-        <p class="section-subtitle">Смотри мои лучшие выступления на YouTube</p>
-        
-        <div class="videos-grid">
-            <a href="https://youtu.be/7UFkZFje8OA?si=y_S9hm2MVCjx0N9D" target="_blank" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/3.jpg" alt="Превью видео">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>МАМЕНЬКИН СЫНОК</h3>
-                    <p>Про любовь к маме и шоу беременна в 16</p>
-                    <div class="video-meta">
-                        <span><i class="fas fa-clock"></i> 13:25</span>
-                        <span><i class="fas fa-eye"></i> 102K просмотров</span>
-                    </div>
-                </div>
-            </a>
+<section class="videos" id="videos">
+    <h2 class="section-title">ВИДЕО <span>ВЫСТУПЛЕНИЯ</span></h2>
+    <p class="section-subtitle">Смотри мои лучшие выступления</p>
 
-            <a href="https://youtu.be/hdS575dKk0Y?si=dYN_Y-nQGGF6DxNW" target="_blank" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/4.jpg" alt="Превью видео">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>Я УМЕЮ ВОДИТЬ КАМАЗ</h3>
-                    <p>Про обучение вождению с отцом и автошколу</p>
-                    <div class="video-meta">
-                        <span><i class="fas fa-clock"></i> 11:05</span>
-                        <span><i class="fas fa-eye"></i> 74K просмотров</span>
-                    </div>
-                </div>
-            </a>
 
-            <a href="https://youtu.be/yxvNClDMJ9M?si=zpqxpiUKFYJIHh18" target="_blank" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/5.jpg" alt="Превью видео">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
+    <div class="videos-grid">
+        <div class="video-card" data-video="0">
+            <div class="video-thumbnail">
+                <img src="images/3.jpg" alt="МАМЕНЬКИН СЫНОК">
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
                     </div>
                 </div>
-                <div class="video-info">
-                    <h3>ОН ПРОСТО ДРУГ</h3>
-                    <p>Про друзей в отношениях, измены и бывших</p>
-                    <div class="video-meta">
-                        <span><i class="fas fa-clock"></i> 10:43</span>
-                        <span><i class="fas fa-eye"></i> 70K просмотров</span>
-                    </div>
+            </div>
+            <div class="video-info">
+                <h3>МАМЕНЬКИН СЫНОК</h3>
+                <p>Про любовь к маме и шоу беременна в 16</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-clock"></i> 13:25</span>
+                    <span><i class="fas fa-eye"></i> 102K просмотров</span>
                 </div>
-            </a>
-
-            <a href="https://youtu.be/QvDA_pSZ61A?si=R2ZATujgpjsbdSms" target="_blank" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/6.jpg" alt="Превью видео">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>ОДАРЕННЫЙ РЕБЕНОК</h3>
-                    <p>Про кружки и дополнительные занятия у детей</p>
-                    <div class="video-meta">
-                        <span><i class="fas fa-clock"></i> 10:08</span>
-                        <span><i class="fas fa-eye"></i> 48K просмотров</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://youtu.be/SdX0Frz5wsU?si=npO4BmW7mYvTCSP4" target="_blank" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/7.jpg" alt="Превью видео">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>НЕКУКОЛД</h3>
-                    <p>Про квартиру в Подольске, отношения и сайты знакомств</p>
-                    <div class="video-meta">
-                        <span><i class="fas fa-clock"></i> 8:07</span>
-                        <span><i class="fas fa-eye"></i> 35K просмотров</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://youtu.be/LdSNxJ1Pim4?si=fKc6tmI5-zEdMYcE" target="_blank" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/8.jpg" alt="Превью видео">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>ВСЕ ВКЛЮЧЕНО</h3>
-                    <p>Про родной город и отдых с родителями на море</p>
-                    <div class="video-meta">
-                        <span><i class="fas fa-clock"></i> 9:09</span>
-                        <span><i class="fas fa-eye"></i> 23K просмотров</span>
-                    </div>
-                </div>
-            </a>
+            </div>
         </div>
-    </section>
+
+        <div class="video-card" data-video="1">
+            <div class="video-thumbnail">
+                <img src="images/4.jpg" alt="Я УМЕЮ ВОДИТЬ КАМАЗ">
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>Я УМЕЮ ВОДИТЬ КАМАЗ</h3>
+                <p>Про обучение вождению с отцом и автошколу</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-clock"></i> 11:05</span>
+                    <span><i class="fas fa-eye"></i> 74K просмотров</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-video="2">
+            <div class="video-thumbnail">
+                <img src="images/5.jpg" alt="ОН ПРОСТО ДРУГ">
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>ОН ПРОСТО ДРУГ</h3>
+                <p>Про друзей в отношениях, измены и бывших</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-clock"></i> 10:43</span>
+                    <span><i class="fas fa-eye"></i> 70K просмотров</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-video="3">
+            <div class="video-thumbnail">
+                <img src="images/6.jpg" alt="ОДАРЕННЫЙ РЕБЕНОК">
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>ОДАРЕННЫЙ РЕБЕНОК</h3>
+                <p>Про кружки и дополнительные занятия у детей</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-clock"></i> 10:08</span>
+                    <span><i class="fas fa-eye"></i> 48K просмотров</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-video="4">
+            <div class="video-thumbnail">
+                <img src="images/7.jpg" alt="НЕКУКОЛД">
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>НЕКУКОЛД</h3>
+                <p>Про квартиру в Подольске, отношения и сайты знакомств</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-clock"></i> 8:07</span>
+                    <span><i class="fas fa-eye"></i> 35K просмотров</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-video="5">
+            <div class="video-thumbnail">
+                <img src="images/8.jpg" alt="ВСЕ ВКЛЮЧЕНО">
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>ВСЕ ВКЛЮЧЕНО</h3>
+                <p>Про родной город и отдых с родителями на море</p>
+                <div class="video-meta">
+                    <span><i class="fas fa-clock"></i> 9:09</span>
+                    <span><i class="fas fa-eye"></i> 23K просмотров</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Quotes Section -->
     <!--<section class="quotes" id="quotes">
@@ -1559,6 +1858,15 @@ footer p {
 
     <!-- Footer -->
     <footer>
+        <footer>
+    <div class="footer-menu">
+        <a href="index.html">Главная</a>
+        <a href="index.html#tour">Концерты</a>
+        <a href="index.html#videos">Видео</a>
+        <a href="index.html#about">Обо мне</a>
+        <a href="index.html#gallery">Галерея</a>
+        <a href="organizers.html">Организаторам</a>
+    </div>
     <p>&copy; 2026 Даниил Петров. Все права защищены.</p>
     <p style="margin-top: 10px; font-size: 14px;">Сделано с <i class="fas fa-heart" style="color: var(--primary);"></i> и юмором</p>
     <p style="margin-top: 15px; font-size: 13px; color: var(--gray); border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 15px;">
@@ -1709,15 +2017,128 @@ footer p {
     // ==========================================
     // 5. Navbar background on scroll
     // ==========================================
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 100) {
-            nav.style.background = 'rgba(10, 10, 10, 0.98)';
-        } else {
-            nav.style.background = 'rgba(10, 10, 10, 0.95)';
+    // Данные видео
+const videoLinks = [
+    { title: 'МАМЕНЬКИН СЫНОК', youtube: 'https://youtu.be/7UFkZFje8OA', vk: 'https://vkvideo.ru/video-225070655_456239115?list=dfdadc8183c32d949d' },
+    { title: 'Я УМЕЮ ВОДИТЬ КАМАЗ', youtube: 'https://youtu.be/hdS575dKk0Y', vk: 'https://vkvideo.ru/video-225070655_456239177?list=823f0c72c0f4f38aa7' },
+    { title: 'ОН ПРОСТО ДРУГ', youtube: 'https://youtu.be/yxvNClDMJ9M', vk: 'https://vkvideo.ru/video-225070655_456239057?list=7866d38bf4958a3745' },
+    { title: 'ОДАРЕННЫЙ РЕБЕНОК', youtube: 'https://youtu.be/QvDA_pSZ61A', vk: 'https://vkvideo.ru/video-225070655_456239085?list=2e2b2d82eed6774749' },
+    { title: 'НЕКУКОЛД', youtube: 'https://youtu.be/SdX0Frz5wsU', vk: 'https://vkvideo.ru/video-225070655_456239029?list=a0c46e19f10085dd63' },
+    { title: 'ВСЕ ВКЛЮЧЕНО', youtube: 'https://youtu.be/LdSNxJ1Pim4', vk: 'https://vkvideo.ru/video-225070655_456239218?list=0bebb237a8b1878f0e&t=2m11s' }
+];
+
+// Ждём полной загрузки страницы
+window.addEventListener('load', function() {
+    const modal = document.getElementById('platformModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const ytBtn = document.getElementById('ytBtn');
+    const vkBtn = document.getElementById('vkBtn');
+    const closeBtn = document.getElementById('modalClose');
+
+    // Обработчик клика по карточкам видео
+    const videoCards = document.querySelectorAll('.video-card');
+    videoCards.forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const index = parseInt(this.getAttribute('data-video'));
+            const video = videoLinks[index];
+            
+            // Устанавливаем ссылки в кнопки
+            ytBtn.setAttribute('href', video.youtube);
+            vkBtn.setAttribute('href', video.vk);
+            modalTitle.textContent = video.title;
+            
+            // Показываем модалку
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Закрытие по крестику
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+
+    // Закрытие по клику вне модалки
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
         }
     });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Автоматическое закрытие модального окна при выборе площадки
+document.addEventListener('DOMContentLoaded', function() {
+    const platformModal = document.getElementById('platformModal');
+    const ytBtn = document.getElementById('ytBtn');
+    const vkBtn = document.getElementById('vkBtn');
+
+    function closePlatformModal() {
+        if (platformModal) {
+            platformModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Закрытие при клике на YouTube
+    if (ytBtn) {
+        ytBtn.addEventListener('click', function() {
+            setTimeout(closePlatformModal, 150);
+        });
+    }
+
+    // Закрытие при клике на VK
+    if (vkBtn) {
+        vkBtn.addEventListener('click', function() {
+            setTimeout(closePlatformModal, 150);
+        });
+    }
+
+    // Дополнительно: закрытие при клике на крестик и фон (на всякий случай)
+    const closeBtn = document.querySelector('.platform-modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePlatformModal);
+    }
+
+    if (platformModal) {
+        platformModal.addEventListener('click', function(e) {
+            if (e.target === platformModal) {
+                closePlatformModal();
+            }
+        });
+    }
+});
+
+
 </script>
+
+ <!-- Модальное окно выбора площадки -->
+<div id="platformModal" class="platform-modal">
+    <div class="platform-modal-content">
+        <span class="platform-modal-close" id="modalClose">&times;</span>
+        <h3 id="modalTitle">Выберите площадку для просмотра</h3>
+        <div class="platform-buttons">
+            <a href="" id="ytBtn" target="_blank" rel="noopener noreferrer" class="platform-btn yt-btn">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </a>
+            <a href="" id="vkBtn" target="_blank" rel="noopener noreferrer" class="platform-btn vk-btn">
+                <i class="fab fa-vk"></i>
+                <span>ВКонтакте</span>
+            </a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
